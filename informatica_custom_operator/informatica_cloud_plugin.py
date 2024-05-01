@@ -50,10 +50,11 @@ class InformaticaCloudHook(BaseHook):
         """
         Retrieves the federation ID of an Informatica Cloud asset.
 
+        :param asset_path: The name of the asset.
+        :type asset_path: str
         :param asset_type: The type of the asset (e.g., 'mappingTask', 'taskflow', 'fileIngestionTask').
         :type asset_type: str
-        :param asset_name: The name of the asset.
-        :type asset_name: str
+
         :return: The federation ID of the asset.
         :rtype: str
         """
@@ -80,6 +81,7 @@ class MappingTaskOperator(BaseOperator):
     :param informatica_cloud_conn_id: The Airflow connection ID for Informatica Cloud.
     :type informatica_cloud_conn_id: str
     :param polling_time: Time in seconds to poll for mapping task status
+    :type polling_time: int
     """
 
     @apply_defaults
